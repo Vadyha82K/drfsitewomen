@@ -26,7 +26,7 @@ def encode():
     print(json)
 
 def  decode():
-    stream = io.BytesIO({'title': 'Angelina Jolie', 'content': 'Content: Angelina Jolie'})
+    stream = io.BytesIO(b'{"title":"Angelina Jolie","content":"Content: Angelina Jolie"}')
     data = JSONParser().parse(stream)
     serializer = WomenSerializer(data=data)
     serializer.is_valid()
