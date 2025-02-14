@@ -8,9 +8,10 @@ from .models import Women
 from .serializers import WomenSerializer
 
 
-# class WomenAPIView(generics.ListAPIView):
-#     queryset = Women.objects.all()
-#     serializer_class = WomenSerializer
+class WomenAPIList(generics.ListCreateAPIView):
+    queryset = Women.objects.all()
+    serializer_class = WomenSerializer
+
 
 class WomenAPIView(APIView):
     def get(self, request):
